@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home.html</title>
+</head>
+<body>
+<h1>home!!!!</h1>
+<ul>
+  <li><a th:href="@{/member/join}">회원가입</a></li>
+  <li th:if="${session.id==null}"><a th:href="@{/member/login}">로그인</a></li>
+  <li th:if="${session.id!=null}">
+      <span th:text="${session.id}"></span>
+      <a th:href="@{/member/logout}">로그아웃</a>
+  </li>
+  <!-- 마이페이지 기능 완성해 보세요. -->
+  <li><a th:href="@{/member/mypage}">마이페이지</a></li>
+  <li><a th:href="@{/item/list1}">제품1</a></li>
+  <li><a th:href="@{/item/list2}">제품2</a></li>
+
+</ul>
+</body>
+</html>
